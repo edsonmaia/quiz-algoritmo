@@ -49,7 +49,6 @@ procedimento pontuar(q : inteiro)
          se (resposta <> correta[q]) e (tentativa = 2) entao
              escreval("Errou na 2ª tentativa")
              // chamar proxima questao
-
          fimse
     fimse
 
@@ -334,11 +333,33 @@ se (resposta = correta[10]) ou (resposta <> correta[10]) entao
 fimse
 // fim 10a pergunta
 
+// conceito
+se (pontos < 24) entao
+   situacao <- "Péssimo"
+fimse
+
+se (pontos >= 25) e (pontos <= 49) entao
+   situacao <- "Regular"
+fimse
+
+se (pontos >= 50) e (pontos <= 74) entao
+   situacao <- "Bom"
+fimse
+
+se (pontos >=75) e (pontos <= 99) entao
+   situacao <- "Ótimo"
+fimse
+
+se (pontos >= 100) entao
+   situacao <- "Excelente"
+fimse
+
 // PLACAR FINAL
 escreval("")
 escreval("***********************************")
 escreval("*           PLACAR FINAL          *")
 escreval("   Você ganhou ", pontos ," pontos!")
+escreval("            ", situacao ,"         ")
 escreval("*                                 *")
 escreval("***********************************")
 
